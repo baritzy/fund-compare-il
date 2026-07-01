@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
+    <meta name="supported-color-schemes" content="light only">
+    <title>השוואת קרנות — גמל, השתלמות, מדדים</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;900&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="disclaimer-bar">אין באמור משום ייעוץ השקעות או שיווק השקעות. ביצועי עבר אינם מעידים על ביצועים עתידיים.</div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <img src="logo-white.png" alt="שווה" class="hero-logo">
+            <p>כל הקרנות במקום אחד</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="tabs-section">
+            <div class="tabs">
+                <button class="tab-btn" data-tab="gemel"><span>גמל, השתלמות ופנסיה</span></button>
+                <button class="tab-btn active" data-tab="index"><span>קרנות מחקות ותעודות סל</span></button>
+                <button class="tab-btn" data-tab="favorites"><span>★ מועדפים <span class="fav-count-badge hidden" id="favCountBadge">0</span></span></button>
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <p class="section-label">בחר סוג מוצר</p>
+            <div class="categories" id="categoriesGrid"></div>
+        </section>
+
+        <div class="spec-filters hidden" id="specFilters"></div>
+
+        <div class="controls hidden" id="controlsBar">
+            <div class="search-box" id="searchBox">
+                <span class="search-icon">&#128269;</span>
+                <input type="text" id="searchInput" placeholder="חיפוש לפי שם קרן או חברה מנהלת..." autocomplete="off">
+                <div class="autocomplete-dropdown hidden" id="autocompleteDropdown"></div>
+            </div>
+            <select class="exchange-select hidden" id="exchangeSelect">
+                <option value="all">הכל (ישראל + ארה״ב)</option>
+                <option value="tase">קרנות ישראליות (TASE)</option>
+                <option value="us">קרנות אמריקאיות (US ETFs)</option>
+            </select>
+            <select class="sort-select" id="sortSelect">
+                <option value="fee-asc">דמי ניהול: נמוך &rarr; גבוה</option>
+                <option value="fee-desc">דמי ניהול: גבוה &rarr; נמוך</option>
+                <option value="return-ytd-desc">תשואה מתחילת השנה: גבוה &rarr; נמוך</option>
+                <option value="return-3y-desc">תשואה 3 שנים: גבוה &rarr; נמוך</option>
+                <option value="return-5y-desc">תשואה 5 שנים: גבוה &rarr; נמוך</option>
+                <option value="aum-desc">גודל קרן: גדול &rarr; קטן</option>
+                <option value="sd-asc">סטיית תקן: נמוך &rarr; גבוה</option>
+            </select>
+        </div>
+
+        <div class="selected-index hidden" id="selectedIndex"></div>
+
+        <div class="results-info hidden" id="resultsInfo">
+            <span class="results-count" id="resultsCount"></span>
+            <span class="fund-fee-legend" title="דמי ניהול = הקבוע. בקרנות בעלות דמי ניהול 0% נגבה לעיתים שכר ניהול משתנה (תלוי תשואה).">? מה זה דמי ניהול</span>
+            <span class="data-freshness" id="dataFreshness"></span>
+        </div>
+
+        <div class="main-layout">
+            <div id="fundList" class="fund-list"></div>
+            <aside class="history-panel" id="historyPanel">
+                <div class="history-header">
+                    <span>חיפושים אחרונים</span>
+                    <button class="history-clear" id="historyClear" title="נקה היסטוריה">&times;</button>
+                </div>
+                <div class="history-list" id="historyList"></div>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-disclaimer">
+            <strong>גילוי נאות:</strong> אין באמור משום ייעוץ השקעות או שיווק השקעות כהגדרתם בחוק הסדרת העיסוק בייעוץ השקעות, בשיווק השקעות ובניהול תיקי השקעות, תשנ"ה-1995. המידע מוצג כמות שהוא (as-is) ואינו מהווה המלצה לרכישה או מכירה של מוצר פיננסי כלשהו. ביצועי עבר אינם מעידים על ביצועים עתידיים. מומלץ להתייעץ עם יועץ השקעות מורשה לפני קבלת החלטות פיננסיות.
+        </div>
+        <div class="footer-source">
+            מקור הנתונים: <a href="https://data.gov.il/dataset/gemelnet" target="_blank" rel="noopener">גמלנט — רשות שוק ההון</a> | <a href="https://maya.tase.co.il" target="_blank" rel="noopener">מאיה — הבורסה לני"ע</a>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
