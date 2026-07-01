@@ -422,7 +422,10 @@
             }
             body { background: #F4F7FA !important; color: #1A2332 !important; }
             .hero { background: linear-gradient(135deg, #1a3a50 0%, #2a6a8f 50%, #4a9abf 100%) !important; }
-            .fund-card, .tab-btn, .category-btn, .top5-card, .history-panel { background: #FFFFFF !important; }
+            .fund-card, .top5-card, .history-panel { background: #FFFFFF !important; }
+            .tab-btn:not(.active), .category-btn:not(.active) { background: #FFFFFF !important; }
+            .tab-btn.active { background: var(--primary) !important; color: #fff !important; }
+            .category-btn.active { background: var(--accent-light) !important; color: var(--accent-dark) !important; }
             .search-box input, .sort-select, .exchange-select { background: #FFFFFF !important; color: #1A2332 !important; }
             .disclaimer-bar { background: #0F2D3F !important; }
             footer { background: #FFFFFF !important; }
